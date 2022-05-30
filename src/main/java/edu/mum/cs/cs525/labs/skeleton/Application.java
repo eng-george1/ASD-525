@@ -1,8 +1,11 @@
 package edu.mum.cs.cs525.labs.skeleton;
 
+import edu.mum.cs.cs525.labs.skeleton.Factory.AccountDAOFactory;
+import edu.mum.cs.cs525.labs.skeleton.Factory.AccountDAOStore;
+
 public class Application {
 	public static void main(String[] args) {
-		AccountService accountService = new AccountServiceImpl();
+		AccountService accountService = new AccountServiceImpl(new AccountDAOStore().createDAO(false));
 
 		// create 2 accounts;
 		accountService.createAccount("1263862", "Frank Brown",new P1(new P2(new P3( new CheckingsAccStrategy()))));

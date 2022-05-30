@@ -5,8 +5,8 @@ import java.util.Collection;
 public class AccountServiceImpl implements AccountService {
 	private AccountDAO accountDAO;
 	
-	public AccountServiceImpl(){
-		accountDAO = new AccountDAOImpl();
+	public AccountServiceImpl(AccountDAO accountDAO){
+		this.accountDAO = accountDAO;
 	}
 
 	public Account createAccount(String accountNumber, String customerName,InterestStrategy accountType) {
